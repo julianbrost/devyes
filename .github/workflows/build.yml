@@ -1,0 +1,14 @@
+name: Build
+on:
+  - push
+  - pull_request
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - run: sudo apt-get install linux-headers-$(uname -r)
+      - run: make
+      - run: sudo insmod devyes.ko
+      - run: sudo chmod 444 /dev/yes
+      - run: diff -us <(yes | head -10000) <(head -10000 /dev/yes)
