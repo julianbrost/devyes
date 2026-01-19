@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2020, 2026 Julian Brost <julian@0x4a42.net>
+// SPDX-License-Identifier: GPL-2.0-or-later
+
 #define pr_fmt(fmt) KBUILD_MODNAME ": %s: " fmt, __func__
 #include <linux/cdev.h>
 #include <linux/device.h>

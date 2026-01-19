@@ -36,3 +36,8 @@ $ make KDIR=/path/to/modules/6.18.5/build
 
 Now, `/dev/yes` is ready to use. Instead of `yes | example_command`, simply do
 `example_command < /dev/yes`.
+
+<!--
+SPDX-FileCopyrightText: 2026 Julian Brost <julian@0x4a42.net>
+SPDX-License-Identifier: GPL-2.0-or-later
+-->
