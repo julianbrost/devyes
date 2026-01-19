@@ -30,7 +30,7 @@ static struct file_operations devyes_fops = {
 	.read = devyes_read,
 };
 
-int __init devyes_module_init(void) {
+static int __init devyes_module_init(void) {
 	int result = 0;
 	size_t i;
 	struct device *device;
@@ -77,7 +77,7 @@ fail:
 	return result;
 }
 
-void __exit devyes_module_exit(void) {
+static void __exit devyes_module_exit(void) {
 	cdev_del(&cdev);
 	device_destroy(class, dev);
 	class_destroy(class);
