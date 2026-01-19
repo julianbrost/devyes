@@ -3,6 +3,6 @@
 *.mod.c
 *.mod.o
 *.o
-.devyes.*.cmd
+.*.cmd
 Module.symvers
 modules.order
