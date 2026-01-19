@@ -44,7 +44,11 @@ int __init devyes_module_init(void) {
 		goto fail;
 	}
 
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(6, 4, 0)
+	class = class_create("devyes");
+#else
 	class = class_create(THIS_MODULE, "devyes");
+#endif
 	if (IS_ERR(class)) {
 		result = PTR_ERR(class);
 		goto fail_chrdev_region;
